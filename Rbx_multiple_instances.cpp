@@ -5,7 +5,6 @@
 
 HANDLE FindHandle(DWORD pid)
 {
-
     HANDLE Process = OpenProcess(PROCESS_ALL_ACCESS, 0, pid);
 
     SYSTEM_HANDLE_INFORMATION handleInfo;
@@ -49,9 +48,6 @@ HANDLE FindHandle(DWORD pid)
 
             if (name->Length > 29 && wcscmp(name->Buffer + 29, L"ROBLOX_singletonEvent") == 0)
             {
-
-
-
                 printf("Handle Found and Closing:  %S \n You can now open another roblox instance! ", name->Buffer);
                 DuplicateHandle(Process, (HANDLE)pHandle.Handle, ::GetCurrentProcess(), &DuplicatedHandle,
                     0, FALSE, DUPLICATE_CLOSE_SOURCE);
@@ -70,11 +66,8 @@ HANDLE FindHandle(DWORD pid)
 
     }
 
-
     printf("Handle Already Closed.");
-
     CloseHandle(Process);
-
     return 0;
 }
 
