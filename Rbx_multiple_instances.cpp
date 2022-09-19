@@ -1,6 +1,3 @@
-// Rbx_multiple_instances.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 
 #include "defs.h"
 
@@ -67,7 +64,6 @@ HANDLE FindHandle(DWORD pid)
 
             }
 
-           // free(nameBuffer);
 
 
         }
