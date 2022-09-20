@@ -12,7 +12,7 @@ HANDLE FindHandle(DWORD pid)
  PSYSTEM_HANDLE_INFORMATION pSysHandleInfo = new SYSTEM_HANDLE_INFORMATION;
  ULONG retlen;
  DWORD size = sizeof(SYSTEM_HANDLE_INFORMATION);
- NTSTATUS status = NtQuerySystemInformation(16,
+ NtQuerySystemInformation(16,
  pSysHandleInfo, size, &retlen);
 
  delete pSysHandleInfo;
